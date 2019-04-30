@@ -1,0 +1,12 @@
+server:
+  port: 9001
+  #  address: 192.168.99.5
+spring:
+  application:
+    name: spring-framework-user
+eureka:
+  client:
+    service-url:
+      defaultZone:http://192.168.99.5:8001/eureka/
+logging:
+  config: classpath:logback.xml

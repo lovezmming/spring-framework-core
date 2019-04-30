@@ -1,0 +1,12 @@
+mybatis:
+  config-location: classpath:mybatis-generator.xml
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.spring.framework.data.mapper
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    data-username: root
+    data-password:
+    url: jdbc:mysql://localhost:3306/zmstd?useUnicode=true&characterEncoding=utf-8&useSSL=true
+logging:
+  config: classpath:logback.xml
