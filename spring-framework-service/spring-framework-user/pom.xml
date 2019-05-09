@@ -23,6 +23,11 @@
         </dependency>
         <dependency>
             <groupId>com.spring.framework</groupId>
+            <artifactId>spring-framework-explore-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.spring.framework</groupId>
             <artifactId>spring-framework-user-database</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

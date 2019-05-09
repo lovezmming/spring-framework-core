@@ -1,7 +1,7 @@
 package com.spring.framework.user.service;
 
-import com.spring.framework.user.api.request.UserCreateRequest;
-import com.spring.framework.user.api.response.UserBaseResponse;
+import com.spring.framework.user.api.request.UserGetRequest;
+import com.spring.framework.user.api.response.UserGetResponse;
 import com.spring.framework.user.api.service.UserFeignApi;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +13,9 @@ public class UserRpcService
     @Resource
     private UserFeignApi userFeignApi;
 
-    public UserBaseResponse createUser(UserCreateRequest userCreateRequest)
+    public UserGetResponse getUsers(UserGetRequest userGetRequest)
     {
-        return userFeignApi.createUser(userCreateRequest);
+        return userFeignApi.getUsers(userGetRequest);
     }
 
 }

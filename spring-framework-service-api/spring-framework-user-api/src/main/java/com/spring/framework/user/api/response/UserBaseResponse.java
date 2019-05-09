@@ -15,6 +15,8 @@ public class UserBaseResponse implements Serializable
 
     private String passWord;
 
+    private String name;
+
     private Integer gender;
 
     private Date birthDay;

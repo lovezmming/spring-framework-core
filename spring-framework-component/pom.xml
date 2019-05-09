@@ -20,6 +20,7 @@
         <module>spring-framework-zuul</module>
         <module>spring-framework-hystrix</module>
         <module>spring-framework-config</module>
+        <module>spring-framework-server</module>
     </modules>
 
     <dependencies>

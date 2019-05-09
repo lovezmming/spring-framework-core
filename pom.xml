@@ -18,7 +18,6 @@
 
     <modules>
         <module>spring-framework-component</module>
-        <module>spring-framework-server</module>
         <module>spring-framework-common</module>
         <module>spring-framework-service</module>
         <module>spring-framework-service-api</module>

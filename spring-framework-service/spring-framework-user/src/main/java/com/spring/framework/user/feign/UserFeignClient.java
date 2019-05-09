@@ -1,22 +1,23 @@
 package com.spring.framework.user.feign;
 
-import com.spring.framework.user.api.request.UserCreateRequest;
-import com.spring.framework.user.api.response.UserBaseResponse;
+import com.spring.framework.common.support.BaseController;
+import com.spring.framework.user.api.request.UserGetRequest;
+import com.spring.framework.user.api.response.UserGetResponse;
 import com.spring.framework.user.api.service.UserFeignApi;
 import com.spring.framework.user.service.UserManagerService;
 
 import javax.annotation.Resource;
 
-public class UserFeignClient implements UserFeignApi
+public class UserFeignClient extends BaseController implements UserFeignApi
 {
 
     @Resource
     private UserManagerService userManagerService;
 
     @Override
-    public UserBaseResponse createUser(UserCreateRequest userCreateRequest)
+    public UserGetResponse getUsers(UserGetRequest userGetRequest)
     {
-        UserBaseResponse userLoginResponse = userManagerService.createUser(userCreateRequest);
-        return userLoginResponse;
+        UserGetResponse userGetResponse = userManagerService.getUsers(userGetRequest);
+        return userGetResponse;
     }
 }

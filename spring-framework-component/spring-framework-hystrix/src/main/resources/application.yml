@@ -1,12 +1,14 @@
 server:
-  port: 9001
-  #  address: 192.168.99.5
+  port: 8092
+  #address: 192.168.99.5
+
 spring:
   application:
-    name: spring-framework-user
+    name: spring-framework-hystrix
 eureka:
   client:
     service-url:
-      defaultZone:http://192.168.99.5:8001/eureka/
+      defaultZone: http://localhost:8088/eureka/
+
 logging:
   config: classpath:logback.xml

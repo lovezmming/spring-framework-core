@@ -6,7 +6,7 @@
     <jmxConfigurator/>
     <!--定义日志文件的存储地址和前缀名-->
     <property name="LOG_HOME" value="E:/study/spring-framework-core/logs" />
-    <property name="LOG_PREFIX" value="spring-framework-user" />
+    <property name="LOG_PREFIX" value="spring-framework-hystrix" />
 
     <!-- 一般信息按照每天生成日志文件 -->
     <appender name="INFO_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">

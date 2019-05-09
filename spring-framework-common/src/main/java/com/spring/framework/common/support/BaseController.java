@@ -1,13 +1,10 @@
-package com.spring.framework.base.support;
+package com.spring.framework.common.support;
 
-import com.spring.framework.base.dto.LoginAuthDto;
-import com.spring.framework.base.enums.GlobalConstant;
+import com.spring.framework.common.Wrapper.WrapMapper;
+import com.spring.framework.common.Wrapper.Wrapper;
+import com.spring.framework.common.util.TextUtil;
 import com.spring.framework.util.enums.ErrorCodeEnum;
 import com.spring.framework.util.exceptions.BusinessException;
-import com.spring.framework.util.utils.PublicUtil;
-import com.spring.framework.util.utils.ThreadLocalMap;
-import com.spring.framework.util.wrapper.WrapMapper;
-import com.spring.framework.util.wrapper.Wrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,13 +13,13 @@ public class BaseController
 
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	protected LoginAuthDto getLoginAuthDto() {
+/*	protected LoginAuthDto getLoginAuthDto() {
 		LoginAuthDto loginAuthDto = (LoginAuthDto) ThreadLocalMap.get(GlobalConstant.Sys.TOKEN_AUTH_DTO);
 		if (PublicUtil.isEmpty(loginAuthDto)) {
 			throw new BusinessException(ErrorCodeEnum.UAC10011041);
 		}
 		return loginAuthDto;
-	}
+	}*/
 
 	protected <T> Wrapper<T> handleResult(T result) {
 		boolean flag = isFlag(result);
@@ -51,7 +48,7 @@ public class BaseController
 		} else if (result instanceof Boolean) {
 			flag = (Boolean) result;
 		} else {
-			flag = PublicUtil.isNotEmpty(result);
+			flag = TextUtil.isEmpty(result);
 		}
 		return flag;
 	}
