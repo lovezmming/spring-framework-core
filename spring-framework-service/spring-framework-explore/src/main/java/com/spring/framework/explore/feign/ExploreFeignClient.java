@@ -4,9 +4,11 @@ import com.spring.framework.explore.api.request.ExploreGetRequest;
 import com.spring.framework.explore.api.response.ExploreBaseResponse;
 import com.spring.framework.explore.api.service.ExploreFeignApi;
 import com.spring.framework.explore.service.ExploreManagerService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
+@Service
 public class ExploreFeignClient implements ExploreFeignApi
 {
 
@@ -18,5 +20,11 @@ public class ExploreFeignClient implements ExploreFeignApi
     {
         ExploreBaseResponse exploreBaseResponse = exploreManagerService.getExploreDetails(exploreGetRequest);
         return exploreBaseResponse;
+    }
+
+    @Override
+    public String getTestDetail(String name)
+    {
+        return "this is ExploreFeignClient, hello !" + name;
     }
 }

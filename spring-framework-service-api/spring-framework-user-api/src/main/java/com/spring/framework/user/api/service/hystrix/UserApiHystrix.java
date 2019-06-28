@@ -11,6 +11,9 @@ public class UserApiHystrix implements UserFeignApi
     @Override
     public UserGetResponse getUsers(UserGetRequest userGetRequest)
     {
-        return null;
+        UserGetResponse userGetResponse = new UserGetResponse();
+        userGetResponse.setDesc("error!");
+        userGetResponse.setFlag(Boolean.FALSE);
+        return userGetResponse;
     }
 }

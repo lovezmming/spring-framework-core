@@ -8,7 +8,7 @@
     <name>spring-framework-component</name>
     <packaging>pom</packaging>
 
-    <description>Spring Boot Component</description>
+    <description>Spring Framework Component</description>
 
     <parent>
         <groupId>com.spring.framework</groupId>
@@ -24,7 +24,10 @@
     </modules>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

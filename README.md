@@ -15,3 +15,8 @@ spring cloud
 2.1 zuul网关服务  
 2.2 hystrix熔断服务  
 2.3 config配置中心  
+
+2019-06-28  
+1.config配置本地多数据源实现  
+2.turbine：实现实时监控并显示到hystrix dashboard上  
+

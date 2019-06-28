@@ -9,6 +9,8 @@ import java.util.Date;
 public class UserCreateRequest implements Serializable
 {
 
+    private static final long serialVersionUID = 44432849696482637L;
+
     private String name;
 
     private String userName;

@@ -1,5 +1,8 @@
 package com.spring.framework.user.service.impl;
 
+import com.spring.framework.common.base.enums.ServiceIdEnum;
+import com.spring.framework.common.base.exceptions.BusinessException;
+import com.spring.framework.common.base.rules.PrimaryKeyRule;
 import com.spring.framework.user.api.request.UserCreateRequest;
 import com.spring.framework.user.api.request.UserGetRequest;
 import com.spring.framework.user.api.response.UserBaseResponse;
@@ -35,7 +38,8 @@ public class UserManagerServiceImpl implements UserManagerService
     @Resource
     private SignInMapper signInMapper;
 
-    @Override public UserGetResponse getUsers(UserGetRequest userGetRequest)
+    @Override
+    public UserGetResponse getUsers(UserGetRequest userGetRequest)
     {
         UserGetResponse userGetResponse = new UserGetResponse();
         List<UserBaseResponse> userBaseResponses = new ArrayList<UserBaseResponse>();
@@ -49,7 +53,7 @@ public class UserManagerServiceImpl implements UserManagerService
     }
 
     @Override
-    public UserBaseResponse createUser(UserCreateRequest userCreateRequest)
+    public UserBaseResponse createUser(UserCreateRequest userCreateRequest) throws BusinessException
     {
         User user = new User();
         user.setName(userCreateRequest.getName());
@@ -59,10 +63,14 @@ public class UserManagerServiceImpl implements UserManagerService
 
         user.setUserName(userCreateRequest.getUserName());
         user.setPassWord(userCreateRequest.getPassWord());
-
-        // TODO
-//        user.setPrivatePassWord();
-
+        try
+        {
+            user.setPrivatePassWord(PrimaryKeyRule.primaryPassword(userCreateRequest.getPassWord()));
+        } catch (Exception e)
+        {
+            throw new BusinessException("password primary error!");
+        }
+        user.setId(PrimaryKeyRule.nextId(String.valueOf(ServiceIdEnum.USER.getCode()), ServiceIdEnum.USER.getDesc(), ServiceIdEnum.USER.getFlag()));
         Date now = new Date();
         user.setCreateTime(now);
         user.setUpdateTime(now);

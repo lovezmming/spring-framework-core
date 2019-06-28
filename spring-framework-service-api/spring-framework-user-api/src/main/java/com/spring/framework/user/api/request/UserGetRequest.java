@@ -8,4 +8,5 @@ import java.io.Serializable;
 public class UserGetRequest implements Serializable
 {
 
+    private static final long serialVersionUID = -968369232507226562L;
 }

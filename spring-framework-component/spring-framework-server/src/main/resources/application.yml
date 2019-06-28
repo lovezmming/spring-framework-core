@@ -1,6 +1,7 @@
 server:
-  port: 8090
+  port: 8088
   #address: 192.168.99.5
+  context-path: /
 
 spring:
   application:
@@ -12,6 +13,6 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   instance:
-    appname: master
+    appname: eureka
 logging:
   config: classpath:logback.xml

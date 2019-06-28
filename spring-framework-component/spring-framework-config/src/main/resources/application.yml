@@ -1,7 +1,6 @@
 server:
   port: 8093
   #address: 192.168.99.5
-
 spring:
   application:
     name: spring-framework-config
@@ -9,6 +8,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8088/eureka/
-
 logging:
   config: classpath:logback.xml
+

@@ -1,30 +1,62 @@
 package com.spring.framework.user.controller;
 
-import com.spring.framework.common.Wrapper.WrapMapper;
-import com.spring.framework.common.Wrapper.Wrapper;
-import com.spring.framework.common.support.BaseController;
+import com.spring.framework.common.base.exceptions.BusinessException;
+import com.spring.framework.common.web.support.BaseController;
+import com.spring.framework.common.web.wrapper.WrapMapper;
+import com.spring.framework.common.web.wrapper.Wrapper;
+import com.spring.framework.explore.api.request.ExploreGetRequest;
+import com.spring.framework.explore.api.response.ExploreBaseResponse;
 import com.spring.framework.user.api.request.UserCreateRequest;
 import com.spring.framework.user.api.response.UserBaseResponse;
+import com.spring.framework.user.dataaccess.source.TargetDataSource;
 import com.spring.framework.user.service.UserManagerService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
+import com.spring.framework.user.service.UserRpcService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping("/user")
 public class UserManageController extends BaseController
 {
-    @Resource
+
+    @Autowired
     private UserManagerService userManagerService;
 
-    @PostMapping(value = "/createUser")
+    @Autowired
+    private UserRpcService userRpcService;
+
+    @PostMapping("/createUser")
     public Wrapper<UserBaseResponse> createUser(@RequestBody UserCreateRequest userCreateRequest)
     {
-        UserBaseResponse userBaseResponse = userManagerService.createUser(userCreateRequest);
-        return WrapMapper.success(userBaseResponse);
+        try
+        {
+            UserBaseResponse userBaseResponse = userManagerService.createUser(userCreateRequest);
+            return WrapMapper.success(userBaseResponse);
+        } catch (BusinessException be)
+        {
+            return WrapMapper.error(be.getMessage());
+        }
+    }
+
+    @GetMapping("/getUserExploreDetails")
+    @ResponseBody
+    public Wrapper<ExploreBaseResponse> getUserExploreDetails(@RequestBody ExploreGetRequest exploreGetRequest)
+    {
+        ExploreBaseResponse exploreBaseResponse = userRpcService.getUserExploreDetails(exploreGetRequest);
+        return WrapMapper.success(exploreBaseResponse);
+    }
+
+    @GetMapping("/getTestDetail")
+    public String getTestDetail(@RequestParam(value = "name") String name)
+    {
+        return userRpcService.getTestDetail(name);
+    }
+
+    @GetMapping("/getSystemTime")
+    @TargetDataSource("user")
+    public Long getSystemTime()
+    {
+        return System.currentTimeMillis();
     }
 
 }

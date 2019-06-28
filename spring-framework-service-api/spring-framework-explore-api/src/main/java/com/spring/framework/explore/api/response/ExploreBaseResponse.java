@@ -1,7 +1,9 @@
 package com.spring.framework.explore.api.response;
 
-import java.io.Serializable;
+import com.spring.framework.common.web.support.BaseResult;
+import lombok.Setter;
 
-public class ExploreBaseResponse implements Serializable
+@Setter
+public class ExploreBaseResponse extends BaseResult
 {
 }

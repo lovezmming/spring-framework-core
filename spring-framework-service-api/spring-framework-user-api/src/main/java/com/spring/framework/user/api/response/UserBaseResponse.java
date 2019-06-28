@@ -1,14 +1,16 @@
 package com.spring.framework.user.api.response;
 
+import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Setter
-public class UserBaseResponse implements Serializable
+@Getter
+public class UserBaseResponse
 {
+
     private String userId;
 
     private String userName;
@@ -23,11 +25,9 @@ public class UserBaseResponse implements Serializable
 
     private String phoneNumber;
 
-
     private String roleId;
 
     private String roleName;
-
 
     private List<Date> signInDates;
 

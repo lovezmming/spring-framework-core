@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-framework-server</name>
 
-    <description>Spring Boot Server</description>
+    <description>Spring Framework Server</description>
 
     <parent>
         <groupId>com.spring.framework</groupId>

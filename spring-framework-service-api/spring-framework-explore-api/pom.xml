@@ -8,16 +8,12 @@
     <name>spring-framework-explore-api</name>
     <packaging>jar</packaging>
 
-    <description>Spring Boot Explore Api</description>
+    <description>Spring Framework Explore Api</description>
 
     <parent>
         <groupId>com.spring.framework</groupId>
         <artifactId>spring-framework-service-api</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <dependencies>
-
-    </dependencies>
 
 </project>

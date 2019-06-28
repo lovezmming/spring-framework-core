@@ -1,13 +1,14 @@
 package com.spring.framework.user.api.response;
 
+import com.spring.framework.common.web.support.BaseResult;
+import lombok.Getter;
 import lombok.Setter;
 
-import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 @Setter
-public class UserGetResponse implements Serializable
+@Getter
+public class UserGetResponse extends BaseResult
 {
 
     private List<UserBaseResponse> userBaseResponses;

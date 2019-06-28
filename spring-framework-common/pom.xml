@@ -6,7 +6,7 @@
     <artifactId>spring-framework-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-framework-common</name>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <description>Spring Boot Common</description>
 
@@ -15,6 +15,12 @@
         <artifactId>spring-framework-core</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <modules>
+        <module>spring-framework-common-util</module>
+        <module>spring-framework-common-web</module>
+        <module>spring-framework-common-base</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -51,16 +57,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20.1</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

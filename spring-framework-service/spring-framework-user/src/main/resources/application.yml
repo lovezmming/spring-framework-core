@@ -1,12 +1,13 @@
-server:
-  port: 9001
-  #  address: 192.168.99.5
 spring:
   application:
     name: spring-framework-user
-eureka:
-  client:
-    service-url:
-      defaultZone:http://192.168.99.5:8001/eureka/
+server:
+  port: 9001
 logging:
   config: classpath:logback.xml
+mybatis:
+  type-aliases-package: com.spring.framework.user
+  mapper-locations: classpath*:com/spring/framework/user/**/*.xml
+feign:
+  httpclient:
+    enabled: true
