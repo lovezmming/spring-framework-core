@@ -20,3 +20,12 @@ spring cloud
 1.config配置本地多数据源实现  
 2.turbine：实现实时监控并显示到hystrix dashboard上  
 
+2019-12-20  
+springboot1.5->2.0版本升级  
+springcloud->Finchley.RELEASE版本升级  
+1.调整优化结构  
+2.新增用户权限  
+3.调整代码：  
+  1）数据库建模调整：  
+    数据库主键id采用自定义生成不采用自增主键（推荐雪花算法）   
+  2）依据新版本进行配置调整  

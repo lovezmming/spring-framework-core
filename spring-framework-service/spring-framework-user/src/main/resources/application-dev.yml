@@ -1,0 +1,12 @@
+server:
+  port: 9001
+logging:
+  config: classpath:logback.xml
+mybatis:
+  type-aliases-package: com.spring.framework.*
+  mapper-locations: classpath*:com/spring/framework/**/**/*.xml
+
+feign:
+  compression:
+    request:
+      mime-types: ["application/json; charset=UTF-8"]

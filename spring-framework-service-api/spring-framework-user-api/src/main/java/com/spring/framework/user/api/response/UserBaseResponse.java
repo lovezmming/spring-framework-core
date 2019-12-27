@@ -1,15 +1,14 @@
 package com.spring.framework.user.api.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.spring.framework.common.web.support.BaseResult;
+import com.spring.framework.user.api.response.entity.UserRoleEntity;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
 
-@Setter
-@Getter
-public class UserBaseResponse
-{
+@Data
+public class UserBaseResponse extends BaseResult {
 
     private String userId;
 
@@ -25,16 +24,14 @@ public class UserBaseResponse
 
     private String phoneNumber;
 
-    private String roleId;
-
-    private String roleName;
+    private List<UserRoleEntity> userRoles;
 
     private List<Date> signInDates;
-
-    private Integer score;
 
     private Integer level;
 
     private Integer experience;
+
+    private Integer TotalExperience;
 
 }

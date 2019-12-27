@@ -1,18 +1,20 @@
 spring:
+  application:
+    name: spring-framework-user
   cloud:
     config:
       discovery:
         enabled: true
         service-id: spring-framework-config
-#      uri: http://localhost:8093/
+      #      uri: http://localhost:8093/
       profile: dev
-#      label: master (git-master svn-trunk)
+      #      label: master (git-master svn-trunk)
       name: user-config-dev
       fail-fast: true
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8088/eureka/
-management:
-  security:
-    enabled: false
+    eureka-server-read-timeout-seconds: 20
+    enabled: true
+    fetch-registry: true

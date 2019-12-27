@@ -1,6 +1,5 @@
 package com.spring.framework.common.web.wrapper;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonIgnore;
@@ -8,7 +7,6 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
 
-@Data
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class Wrapper<T> implements Serializable
 {
@@ -21,7 +19,7 @@ public class Wrapper<T> implements Serializable
 
     public static final int ERROR_CODE = 500;
 
-    public static final String ERROR_MESSAGE = "内部异常";
+    public static final String ERROR_MESSAGE = "操作失败";
 
     public static final int ILLEGAL_ARGUMENT_CODE_ = 100;
 
@@ -39,49 +37,41 @@ public class Wrapper<T> implements Serializable
     @Setter
     private T result;
 
-    Wrapper()
-    {
+    Wrapper() {
         this(SUCCESS_CODE, SUCCESS_MESSAGE);
     }
 
-    Wrapper(int code, String message)
-    {
+    Wrapper(int code, String message) {
         this(code, message, null);
     }
 
-    Wrapper(int code, String message, T result)
-    {
+    Wrapper(int code, String message, T result) {
         super();
         this.code(code).message(message).result(result);
     }
 
-    private Wrapper<T> code(int code)
-    {
+    private Wrapper<T> code(int code) {
         this.setCode(code);
         return this;
     }
 
-    private Wrapper<T> message(String message)
-    {
+    private Wrapper<T> message(String message) {
         this.setMessage(message);
         return this;
     }
 
-    public Wrapper<T> result(T result)
-    {
+    public Wrapper<T> result(T result) {
         this.setResult(result);
         return this;
     }
 
     @JsonIgnore
-    public boolean success()
-    {
+    public boolean success() {
         return Wrapper.SUCCESS_CODE == this.code;
     }
 
     @JsonIgnore
-    public boolean error()
-    {
+    public boolean error() {
         return !success();
     }
 

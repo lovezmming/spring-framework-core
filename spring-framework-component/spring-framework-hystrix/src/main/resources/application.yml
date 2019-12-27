@@ -1,7 +1,5 @@
 server:
   port: 8092
-  #address: 192.168.99.5
-
 spring:
   application:
     name: spring-framework-hystrix
@@ -12,6 +10,14 @@ eureka:
 logging:
   config: classpath:logback.xml
 turbine:
-  app-config: spring-framework-user,spring-framework-explore
-
-
+  app-config: spring-framework-user,spring-framework-explore,spring-framework-system
+hystrix:
+  dashboard:
+    enable-ignore-connection-close-header: true
+  metrics:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

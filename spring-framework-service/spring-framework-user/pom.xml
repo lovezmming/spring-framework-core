@@ -6,6 +6,7 @@
     <artifactId>spring-framework-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-framework-user</name>
+    <packaging>jar</packaging>
 
     <description>Spring Boot User</description>
 
@@ -28,8 +29,17 @@
         </dependency>
         <dependency>
             <groupId>com.spring.framework</groupId>
+            <artifactId>spring-framework-system-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.spring.framework</groupId>
             <artifactId>spring-framework-user-database</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,7 +1,5 @@
 server:
   port: 8091
-  #address: 192.168.99.5
-
 spring:
   application:
     name: spring-framework-zuul
@@ -10,9 +8,20 @@ eureka:
     service-url:
       defaultZone: http://localhost:8088/eureka/
 zuul:
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 20000
   routes:
-    spring-framework-user: /user/**
-    spring-framework-explore: /explore/**
-
+    spring-framework-user:
+      path: /user/**
+      serviceId: spring-framework-user
+#      url: http://localhost:9001/
+    spring-framework-explore:
+      path: /explore/**
+      serviceId: spring-framework-explore
+#      url: http://localhost:9002/
+    spring-framework-system:
+      path: /system/**
+      serviceId: spring-framework-system
 logging:
   config: classpath:logback.xml

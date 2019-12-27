@@ -1,7 +1,5 @@
 server:
   port: 8088
-  #address: 192.168.99.5
-  context-path: /
 
 spring:
   application:

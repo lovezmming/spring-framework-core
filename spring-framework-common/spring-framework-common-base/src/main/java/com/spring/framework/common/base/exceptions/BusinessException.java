@@ -3,58 +3,45 @@ package com.spring.framework.common.base.exceptions;
 import com.spring.framework.common.base.enums.ErrorCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class BusinessException extends RuntimeException
 {
 
-	private static final long serialVersionUID = 3160241586346324994L;
-
 	protected int code;
 
-	public BusinessException()
-	{
-	}
+	public BusinessException() {}
 
-	public BusinessException(Throwable cause)
-	{
+	public BusinessException(Throwable cause) {
 		super(cause);
 	}
 
-	public BusinessException(String message)
-	{
+	public BusinessException(String message) {
 		super(message);
 	}
 
-	public BusinessException(String message, Throwable cause)
-	{
+	public BusinessException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
-	public BusinessException(int code, String message)
-	{
+	public BusinessException(int code, String message) {
 		super(message);
 		this.code = code;
 	}
 
-	public BusinessException(int code, String msgFormat, Object... args)
-	{
+	public BusinessException(int code, String msgFormat, Object... args) {
 		super(String.format(msgFormat, args));
 		this.code = code;
 	}
 
-	public BusinessException(ErrorCodeEnum codeEnum, Object... args)
-	{
+	public BusinessException(ErrorCodeEnum codeEnum, Object... args) {
 		super(String.format(codeEnum.msg(), args));
 		this.code = codeEnum.code();
 	}
 
-	public int getCode()
-	{
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(int code)
-	{
+	public void setCode(int code) {
 		this.code = code;
 	}
 }

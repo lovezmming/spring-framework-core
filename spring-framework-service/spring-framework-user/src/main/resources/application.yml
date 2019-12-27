@@ -1,13 +1,3 @@
 spring:
-  application:
-    name: spring-framework-user
-server:
-  port: 9001
-logging:
-  config: classpath:logback.xml
-mybatis:
-  type-aliases-package: com.spring.framework.user
-  mapper-locations: classpath*:com/spring/framework/user/**/*.xml
-feign:
-  httpclient:
-    enabled: true
+  profiles:
+    active: @package.env@

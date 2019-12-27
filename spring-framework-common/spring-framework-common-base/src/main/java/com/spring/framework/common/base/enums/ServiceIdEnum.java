@@ -4,36 +4,35 @@ public enum ServiceIdEnum
 {
 
     /** 用户 */
-    USER(1, "000001", "01"),
+    USER(1, "user", "01"),
 
-    /**  */
-    EXPLORE(2, "000001", "01");
+    /** 商品 */
+    COMMODITY(2, "commodity", "02"),
 
-    private int code;
+    /** 系统 */
+    SYSTEM(3, "system", "03");
+
+    private long code;
 
     private String desc;
 
-    private String flag;
+    private String key;
 
-    public int getCode()
-    {
+    public long getCode() {
         return code;
     }
 
-    public String getDesc()
-    {
+    public String getDesc() {
         return desc;
     }
 
-    public String getFlag()
-    {
-        return flag;
+    public String getKey() {
+        return key;
     }
 
-    ServiceIdEnum(int code, String desc, String flag)
-    {
+    ServiceIdEnum(long code, String desc, String key) {
         this.code = code;
         this.desc = desc;
-        this.flag = flag;
+        this.key = key;
     }
 }

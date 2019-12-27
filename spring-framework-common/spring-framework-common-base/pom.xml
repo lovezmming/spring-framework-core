@@ -6,7 +6,6 @@
     <artifactId>spring-framework-common-base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-framework-common-base</name>
-    <packaging>jar</packaging>
 
     <description>Spring Framework Common Base</description>
 
@@ -15,13 +14,5 @@
         <artifactId>spring-framework-common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.spring.framework</groupId>
-            <artifactId>spring-framework-common-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>

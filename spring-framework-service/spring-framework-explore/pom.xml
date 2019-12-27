@@ -21,11 +21,11 @@
             <artifactId>spring-framework-explore-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>com.spring.framework</groupId>
             <artifactId>spring-framework-explore-database</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>-->
+        </dependency>
     </dependencies>
 
 </project>

@@ -4,6 +4,20 @@ server:
 spring:
   application:
     name: spring-framework-config
+  cloud:
+    config:
+#      profile: dev
+      server:
+        #        git:
+        #          uri: https://github.com/lovezmming/spring-cloud-config.git
+        #          search-paths: dev
+        #          username:
+        #          password:
+        native:
+          search-locations: E:/study/spring-framework-core/database/dev
+  profiles:
+    active: native
+
 eureka:
   client:
     service-url:
